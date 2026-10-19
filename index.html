@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030a18" />
+  <meta name="description" content="Y. Sujitha — AI, Data Science, Web Development & App Development Portfolio." />
+  <meta name="keywords" content="Y. Sujitha, Portfolio, AI, Data Science, Web Development, App Development, Machine Learning, Python, React" />
+  <meta name="author" content="Y. Sujitha" />
+  <title>Y. Sujitha | Futuristic Portfolio & AI Solutions</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Cinematic Welcome Intro Overlay (Runs once per session with skip) -->
+  <div id="welcome-intro" class="welcome-intro" role="dialog" aria-modal="true" aria-label="Welcome Introduction">
+    <canvas id="intro-canvas" class="intro-canvas" aria-hidden="true"></canvas>
+    <div class="intro-backdrop" aria-hidden="true"></div>
+    <div class="intro-box">
+      <div class="intro-badge">
+        <span class="intro-pulse"></span>
+        <span>NEURAL PORTFOLIO INITIALIZATION</span>
+      </div>
+      <div class="intro-greeting" id="intro-greeting" aria-label="HELLO, WELCOME TO MY WORLD">
+        <!-- Letter spans will be generated dynamically or fall back gracefully -->
+        <span class="intro-line">HELLO, WELCOME TO MY WORLD</span>
+      </div>
+      <div class="intro-name-wrap">
+        <span class="intro-prefix">I'm</span>
+        <span class="intro-name gradient-glow">Y. Sujitha</span>
+      </div>
+      <p class="intro-tagline">Turning Ideas Into Intelligent Solutions.</p>
+      <div class="intro-loader">
+        <div class="intro-progress-track">
+          <div class="intro-progress-bar" id="intro-progress-bar"></div>
+        </div>
+        <div class="intro-loader-meta">
+          <span class="intro-status-text" id="intro-status-text">CALIBRATING NEON MATRIX...</span>
+          <span class="intro-percentage" id="intro-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+    <button id="skip-intro-btn" class="skip-intro-btn" aria-label="Skip welcome animation">
+      <span>Skip Intro</span>
+      <kbd class="skip-kbd">Esc</kbd>
+      <span class="skip-arrow">➔</span>
+    </button>
+  </div>
+
+  <!-- Custom Cursor Elements (Desktop only) -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Ambient Interactive Background Elements -->
+  <div class="ambient-spotlight" id="ambient-spotlight" aria-hidden="true"></div>
+  <canvas class="ambient-canvas" id="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <!-- Viewport Top Scroll Progress Indicator -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- Sticky Glassmorphism Header -->
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="Y. Sujitha Portfolio Home">
+      <span class="brand-spark">✦</span> Y.SUJITHA
+    </a>
+
+    <nav class="nav" id="main-nav" aria-label="Primary Navigation">
+      <a class="nav-item active" href="#home">Home</a>
+      <a class="nav-item" href="#about">About</a>
+      <a class="nav-item" href="#education">Education</a>
+      <a class="nav-item" href="#projects">Projects</a>
+      <a class="nav-item" href="#skills">Skills</a>
+      <a class="nav-item" href="#experience">Experience</a>
+      <a class="nav-item" href="#contact">Contact</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <!-- Theme Toggle (Dark / Light) -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme mode" title="Toggle theme">
+        <span class="theme-icon moon-icon" aria-hidden="true">🌙</span>
+        <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
+      </button>
+
+      <!-- Resume Button -->
+      <a class="resume" href="assets/resume-placeholder.txt" download aria-label="Download Y. Sujitha's Resume">
+        <span class="resume-icon">⇩</span> <span>Download Resume</span>
+      </a>
+
+      <!-- Mobile Navigation Hamburger Toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero section reveal" id="home">
+      <div class="hero-copy">
+        <div class="hero-header-row">
+          <div class="eyebrow"><span class="pulse"></span> HELLO, I'M</div>
+          <!-- Tasteful Opportunities Badge from existing content -->
+          <div class="status-badge" title="Open to opportunities, collaborations, and projects">
+            <span class="status-dot"></span>
+            <span>Open for Opportunities</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-prefix">Y.</span>
+          <span class="hero-title-name animated-name-gradient">SUJITHA</span>
+        </h1>
+
+        <h2 class="hero-subtitle">
+          Building Intelligent Solutions<br>for a Better Tomorrow
+          <span class="underline"></span>
+        </h2>
+
+        <p class="intro">
+          B.Tech student passionate about AI, Data Science, Web Development and App Development. I love solving real-world problems through technology and creating impactful projects.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary glow-btn" href="#projects">
+            <span>View My Projects</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a class="btn ghost glow-btn" href="https://github.com/" target="_blank" rel="noreferrer">
+            <span class="btn-icon">◉</span>
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag-chip">✦ Curious by nature</span>
+          <span class="tag-chip">⌘ Build • Learn • Grow</span>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL ARTWORK -->
+      <div class="hero-art" id="hero-art">
+        <div class="orbit orbit-a" aria-hidden="true">
+          <span class="satellite sat-a"></span>
+        </div>
+        <div class="orbit orbit-b" aria-hidden="true">
+          <span class="satellite sat-b"></span>
+        </div>
+        <div class="orbit orbit-c" aria-hidden="true"></div>
+
+        <div class="portrait-frame" id="portrait-frame">
+          <img src="assets/sujitha.png" alt="Y. Sujitha - AI &amp; Web Developer" loading="eager" />
+          <div class="portrait-glimmer" aria-hidden="true"></div>
+        </div>
+
+        <div class="float-card card-left floating-el" data-speed="1.2">
+          <b>AI &amp; DATA</b>
+          <span>Data Science</span>
+          <span>Web Development</span>
+          <span>App Development</span>
+          <small>Always learning…</small>
+        </div>
+
+        <div class="float-card card-right floating-el" data-speed="0.8">
+          <b>Turning Ideas</b>
+          <b>Into Impact</b>
+          <span class="spark">✦</span>
+        </div>
+
+        <div class="code-note floating-el" data-speed="1.5">
+          Code<br>Learn<br>Build<br>Grow ↗
+        </div>
+      </div>
+
+      <!-- HERO STATISTICS -->
+      <aside class="stats glass reveal-stagger" id="stats-counter-strip">
+        <div class="stat">
+          <span class="stat-icon cyan">◇</span>
+          <div>
+            <strong class="stat-value" data-target="8" data-suffix="+">8+</strong>
+            <small>Projects Completed</small>
+          </div>
+        </div>
+        <div class="stat">
+          <span class="stat-icon purple">▰</span>
+          <div>
+            <strong class="stat-value" data-target="4" data-suffix="">4</strong>
+            <small>Domains Exploring</small>
+          </div>
+        </div>
+        <div class="stat">
+          <span class="stat-icon gold">♜</span>
+          <div>
+            <strong class="stat-value" data-target="1" data-suffix="">1</strong>
+            <small>Internship Offer</small>
+          </div>
+        </div>
+        <div class="stat">
+          <span class="stat-icon teal">∞</span>
+          <div>
+            <strong class="stat-value infinity-stat">∞</strong>
+            <small>Learning &amp; Growing</small>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SKILL STRIP SECTION -->
+    <section class="skill-strip reveal" id="skills">
+      <article class="skill-card tilt-card" tabindex="0">
+        <span class="skill-icon cyan">‹/›</span>
+        <div>
+          <h3>Web Development</h3>
+          <p>Modern &amp; Responsive<br>Web Applications</p>
+        </div>
+      </article>
+      <article class="skill-card tilt-card" tabindex="0">
+        <span class="skill-icon purple">⌁</span>
+        <div>
+          <h3>Data Science</h3>
+          <p>Data Analysis &amp;<br>Machine Learning</p>
+        </div>
+      </article>
+      <article class="skill-card tilt-card" tabindex="0">
+        <span class="skill-icon blue">▯</span>
+        <div>
+          <h3>App Development</h3>
+          <p>Mobile App Ideas<br>and Prototypes</p>
+        </div>
+      </article>
+      <article class="skill-card tilt-card" tabindex="0">
+        <span class="skill-icon pink">✺</span>
+        <div>
+          <h3>Artificial Intelligence</h3>
+          <p>Exploring AI for<br>Real-world Solutions</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="content-section reveal" id="about">
+      <div class="section-heading">
+        <div>
+          <span class="mini-icon">✦</span>
+          <h2>About Me</h2>
+        </div>
+        <span class="section-kicker">A little about my journey</span>
+      </div>
+      <div class="about-panel glass">
+        <p>
+          I'm <strong>Y. Sujitha</strong>, a B.Tech student at Anurag Engineering College, Kodad. I enjoy exploring technology, building useful applications, and turning ideas into practical solutions. My current interests include artificial intelligence, data science, web development, and app development.
+        </p>
+        <div class="about-pills">
+          <span class="pill">Problem Solver</span>
+          <span class="pill">Creative Thinker</span>
+          <span class="pill">Continuous Learner</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="content-section reveal" id="projects">
+      <div class="section-heading">
+        <div>
+          <span class="mini-icon">⬡</span>
+          <h2>Featured Projects</h2>
+        </div>
+        <a class="text-link" href="https://github.com/" target="_blank" rel="noreferrer">
+          <span>View GitHub</span> <span class="arrow-icon">→</span>
+        </a>
+      </div>
+
+      <div class="projects-grid" id="projects-showcase">
+        <!-- Project 1: Privora -->
+        <article class="project-card tilt-card" tabindex="0">
+          <div class="project-preview privora">
+            <span class="preview-label">PRIVORA</span>
+            <div class="mock-ui">
+              <i></i><i></i><i></i>
+              <b>Privacy Dashboard</b>
+              <div class="mock-bars"><span></span><span></span><span></span></div>
+            </div>
+            <div class="preview-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Privora</h3>
+              <span class="badge">Web App</span>
+            </div>
+            <p>Digital privacy protection platform with privacy scanning, removal tracking and detailed reports.</p>
+            <div class="chips">
+              <span>Next.js</span>
+              <span>React</span>
+              <span>Supabase</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <span>↗ Live Demo</span>
+              </a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <span>GitHub</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Credit Scoring -->
+        <article class="project-card tilt-card" tabindex="0">
+          <div class="project-preview credit">
+            <span class="preview-label">CREDIT SCORE</span>
+            <div class="chart-circle">742</div>
+            <div class="chart-lines"></div>
+            <div class="preview-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Credit Scoring</h3>
+              <span class="badge">ML</span>
+            </div>
+            <p>Predicts creditworthiness using machine learning models.</p>
+            <div class="chips">
+              <span>Python</span>
+              <span>Scikit-learn</span>
+              <span>Pandas</span>
+            </div>
+            <a class="outline-link" href="https://github.com/" target="_blank" rel="noreferrer">
+              <span>View Project</span> <span class="arrow-icon">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: House Price Prediction -->
+        <article class="project-card tilt-card" tabindex="0">
+          <div class="project-preview house">
+            <span class="preview-label">HOUSE PRICE</span>
+            <div class="house-shape">⌂</div>
+            <div class="mini-graph"></div>
+            <div class="preview-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>House Price Prediction</h3>
+              <span class="badge">ML</span>
+            </div>
+            <p>Predicts house prices based on various features using regression.</p>
+            <div class="chips">
+              <span>Python</span>
+              <span>ML</span>
+              <span>Data Analysis</span>
+            </div>
+            <a class="outline-link" href="https://github.com/" target="_blank" rel="noreferrer">
+              <span>View Project</span> <span class="arrow-icon">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: Car Price Prediction -->
+        <article class="project-card tilt-card" tabindex="0">
+          <div class="project-preview car">
+            <span class="preview-label">CAR PRICE</span>
+            <div class="car-shape">▰</div>
+            <div class="mini-graph"></div>
+            <div class="preview-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Car Price Prediction</h3>
+              <span class="badge">ML</span>
+            </div>
+            <p>Estimates used car prices using machine learning models.</p>
+            <div class="chips">
+              <span>Python</span>
+              <span>ML</span>
+              <span>Pandas</span>
+            </div>
+            <a class="outline-link" href="https://github.com/" target="_blank" rel="noreferrer">
+              <span>View Project</span> <span class="arrow-icon">↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: Iris Flower Classification -->
+        <article class="project-card tilt-card" tabindex="0">
+          <div class="project-preview iris">
+            <span class="preview-label">IRIS CLASSIFIER</span>
+            <div class="flower">✿</div>
+            <div class="flower small">✿</div>
+            <div class="preview-glare" aria-hidden="true"></div>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Iris Flower Classification</h3>
+              <span class="badge">ML</span>
+            </div>
+            <p>Classifies iris flowers into species using ML algorithms.</p>
+            <div class="chips">
+              <span>Python</span>
+              <span>Scikit-learn</span>
+            </div>
+            <a class="outline-link" href="https://github.com/" target="_blank" rel="noreferrer">
+              <span>View Project</span> <span class="arrow-icon">↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- MORE PROJECTS SECTION -->
+      <div class="more-projects reveal">
+        <h2>🚀 More Projects</h2>
+        <div class="more-grid">
+          <a class="more-card tilt-card" href="#contact" tabindex="0">
+            <span class="more-icon pink">✺</span>
+            <span>
+              <b>Memo Code AI</b>
+              <small>AI-powered coding assistant</small>
+            </span>
+            <i class="arrow-icon">↗</i>
+          </a>
+          <a class="more-card tilt-card" href="#contact" tabindex="0">
+            <span class="more-icon cyan">▣</span>
+            <span>
+              <b>Expense Manager</b>
+              <small>Manage daily expenses</small>
+            </span>
+            <i class="arrow-icon">↗</i>
+          </a>
+          <a class="more-card tilt-card" href="#contact" tabindex="0">
+            <span class="more-icon purple">✿</span>
+            <span>
+              <b>Iris Prediction</b>
+              <small>Another ML classification</small>
+            </span>
+            <i class="arrow-icon">↗</i>
+          </a>
+          <a class="more-card tilt-card" href="#contact" tabindex="0">
+            <span class="more-icon teal">♟</span>
+            <span>
+              <b>Career Connect</b>
+              <small>Connect students &amp; opportunities</small>
+            </span>
+            <i class="arrow-icon">↗</i>
+          </a>
+          <a class="more-card tilt-card" href="#contact" tabindex="0">
+            <span class="more-icon blue">▥</span>
+            <span>
+              <b>PreFit (RTFT)</b>
+              <small>Real-time finance/tech tool</small>
+            </span>
+            <i class="arrow-icon">↗</i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN (Education, Experience, Learning, Quote) -->
+    <aside class="right-column">
+      <!-- EDUCATION -->
+      <section class="content-section reveal" id="education">
+        <div class="section-heading">
+          <div>
+            <span class="mini-icon">◆</span>
+            <h2>Education</h2>
+          </div>
+        </div>
+        <div class="timeline" id="education-timeline">
+          <div class="timeline-line-fill" id="timeline-line-fill" aria-hidden="true"></div>
+          <article class="timeline-item">
+            <span class="timeline-dot">◈</span>
+            <div class="timeline-content">
+              <h3>B.Tech</h3>
+              <p>Anurag Engineering College, Kodad</p>
+              <small>Grade: <b class="grade-badge">8.1</b></small>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-dot">◈</span>
+            <div class="timeline-content">
+              <h3>Intermediate</h3>
+              <p>Krishnaveni Junior College, Khammam</p>
+              <small>Percentage: <b class="grade-badge">94%</b></small>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-dot">◈</span>
+            <div class="timeline-content">
+              <h3>10th Class</h3>
+              <p>New Victory Talent School, Khammam</p>
+              <small>Percentage: <b class="grade-badge">100%</b></small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="content-section reveal" id="experience">
+        <div class="section-heading">
+          <div>
+            <span class="mini-icon">▣</span>
+            <h2>Experience</h2>
+          </div>
+        </div>
+        <div class="internship glass tilt-card" tabindex="0">
+          <span class="intern-icon">✉</span>
+          <div>
+            <h3>InternCircle</h3>
+            <p>Web Development Internship</p>
+            <small>Offer Letter Received</small>
+          </div>
+          <span class="external arrow-icon">↗</span>
+        </div>
+      </section>
+
+      <!-- CURRENTLY LEARNING -->
+      <section class="content-section reveal">
+        <div class="section-heading">
+          <div>
+            <span class="mini-icon gold-text">ϟ</span>
+            <h2>Currently Learning</h2>
+          </div>
+        </div>
+        <div class="learning-pills">
+          <span class="pill">Web Development</span>
+          <span class="pill">Data Science</span>
+          <span class="pill">App Development</span>
+          <span class="pill">Artificial Intelligence</span>
+        </div>
+      </section>
+
+      <!-- QUOTE -->
+      <blockquote class="quote glass reveal">
+        <span aria-hidden="true">“</span>
+        <p>Consistent Learning Creates Extraordinary Opportunities.</p>
+        <small>— Y. Sujitha</small>
+      </blockquote>
+    </aside>
+
+    <!-- CONTACT SECTION -->
+    <section class="content-section contact-section reveal" id="contact">
+      <div class="section-heading">
+        <div>
+          <span class="mini-icon">✉</span>
+          <h2>Let's Connect</h2>
+        </div>
+        <span class="section-kicker">Have an idea? Let's build it.</span>
+      </div>
+      <div class="contact-panel glass">
+        <div class="contact-copy">
+          <p>I'm open to learning opportunities, collaborations, and exciting projects.</p>
+          <div class="contact-status-note">
+            <span class="status-pulse-dot"></span>
+            <span>Actively exploring new challenges &amp; tech</span>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary glow-btn" id="email-primary-btn" href="mailto:your.email@example.com">
+            <span>Email Me</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+          <button class="btn ghost glow-btn copy-email-btn" id="copy-email-btn" type="button" aria-label="Copy email address to clipboard">
+            <span class="copy-icon">📋</span>
+            <span class="copy-label">Copy Email</span>
+          </button>
+          <a class="btn ghost glow-btn" href="https://linkedin.com/" target="_blank" rel="noreferrer">
+            <span>LinkedIn</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+          <a class="btn ghost glow-btn" href="https://github.com/" target="_blank" rel="noreferrer">
+            <span>GitHub</span>
+            <span class="arrow-icon">↗</span>
+          </a>
+        </div>
+        <small class="contact-note">Replace placeholder links with your real profiles before publishing.</small>
+      </div>
+    </section>
+  </main>
+
+  <!-- Animated Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <span class="footer-brand">✦ Y. Sujitha</span>
+        <span class="footer-copy">© <span id="year"></span> Y. Sujitha • Designed with curiosity ✦ and a little neon.</span>
+      </div>
+      <div class="footer-right">
+        <button id="replay-intro-btn" class="replay-intro-btn" title="Replay the cinematic welcome intro">
+          <span class="replay-icon">↺</span>
+          <span>Replay Welcome Intro</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Scroll back to top of page" title="Back to top">
+    <span class="back-to-top-glow" aria-hidden="true"></span>
+    <span class="back-to-top-arrow" aria-hidden="true">↑</span>
+  </button>
+
+  <!-- Accessible Toast Notification for Interactive Feedback -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main JavaScript Bundle -->
+  <script src="script.js"></script>
+</body>
+</html>
